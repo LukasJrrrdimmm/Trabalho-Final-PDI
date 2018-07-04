@@ -83,7 +83,7 @@ void detectAndDraw( Mat& img){
 						 r->width, r->height/2.5);
     
 
-	rectangle(img, mouthROI, CV_RGB(255, 0, 0), 1, 8, 0);
+	rectangle(img, mouthROI, CV_RGB(255, 255, 255), 1, 8, 0);
 
 	imgROI = img(mouthROI);
 	
@@ -102,15 +102,16 @@ void detectAndDraw( Mat& img){
 				Point(r->x + nr->x + nr->width, r->y + (r->height/1.5) + nr->y + nr->height),  
 				CV_RGB(255, 255, 255), 1, 8, 0);
 	}
+    //Modificação do código original
     if( cascadeEye.empty() )
 	  continue;
     Rect eyeROI = Rect(r->x, r->y + (r->height/3.5), 
 						 r->width, r->height/3.5);
-    rectangle(img, eyeROI, CV_RGB(0, 0, 255), 1, 8, 0);
+    rectangle(img, eyeROI, CV_RGB(255, 255, 255), 1, 8, 0);
 
 	imgROI2 = img(eyeROI);
     cascadeEye.detectMultiScale(
-								imgROI,
+								imgROI2,
 								nestedObjects,
 								1.1,
 								2,

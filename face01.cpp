@@ -111,7 +111,7 @@ void detectAndDraw( Mat& img){
 
 	imgROI2 = img(eyeROI);
     cascadeEye.detectMultiScale(
-								imgROI,
+								imgROI2,
 								nestedObjects,
 								1.1,
 								2,
